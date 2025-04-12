@@ -20,5 +20,3 @@ print(f"The Fahrenheit are:{Fah_temps}")
 # 4. Identify the days where the temperatures was above 20℃
 index = np.where(temps >= 20)[0]
 print(f"The days (by index) where the temperature was above 20\u00B0C:{index}")
-
-# make a change
