@@ -14,9 +14,9 @@ print(f"Max temperature:{max}\u00B0C")
 print(f"Min temperature:{min}\u00B0C")
 
 # 3. convert celsius to Fahrenheit
-Fah_temps = temps*9/5+32
+Fah_temps = temps*9/5
 print(f"The Fahrenheit are:{Fah_temps}")
 
 # 4. Identify the days where the temperatures was above 20℃
-index = np.where(temps >= 20)[0]
+index = np.where(temps >= 20)[0]+1
 print(f"The days (by index) where the temperature was above 20\u00B0C:{index}")
