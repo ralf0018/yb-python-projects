@@ -14,7 +14,7 @@ print(f"Max temperature:{max}\u00B0C")
 print(f"Min temperature:{min}\u00B0C")
 
 # 3. convert celsius to Fahrenheit
-Fah_temps = temps*9/5
+Fah_temps = temps*9/5+32
 print(f"The Fahrenheit are:{Fah_temps}")
 
 # 4. Identify the days where the temperatures was above 20℃
