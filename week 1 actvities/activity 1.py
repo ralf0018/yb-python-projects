@@ -5,3 +5,4 @@ arr = np.arange(1,11)
 print(arr)
 # print array shape and data type
 print(arr.shape)
+# 12
