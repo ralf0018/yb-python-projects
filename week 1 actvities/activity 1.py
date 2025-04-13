@@ -11,4 +11,5 @@ print(arr.shape)
 print(arr.dtype)
 
 # Multiply each element by 2 and print the result
-print(arr*2)
+newarr = arr*2
+print(newarr)
