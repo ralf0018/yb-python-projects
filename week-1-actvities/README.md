@@ -1,0 +1,1 @@
+Through the 2 activites, I learn the basic uses of numpy, and understand it is more powerful and more efficient than the traditional python lists. 
