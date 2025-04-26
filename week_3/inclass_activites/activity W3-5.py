@@ -7,7 +7,6 @@ class Factorial:
     #calculate and output the result
     #if the input is not valid, return "error", other wise calculate the result
     def cal(self):
-        print(self.num-int(self.num))
         if self.num != int(self.num) or self.num<0:
             return "invalid input"
         elif self.num == 0 or self.num == 1:
