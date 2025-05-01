@@ -1,5 +1,5 @@
 class Factorial:
-    #initialisation
+    #Constructor to initialize the number
     def __init__(self, num):
         self.num = num
         self.result = 1
