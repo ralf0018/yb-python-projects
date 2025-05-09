@@ -4,6 +4,7 @@
 import pandas as pd
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
+import math
 
 # A class for processing files, 
 # supported formats: csv, parquet, text, and some image format(.jpg, .png, .bmp)
@@ -50,6 +51,37 @@ def main():
     processor = fileFormatProcessor(filePath1)
     processor.load_data()
     processor.initial_processing()
+
+def sin_cos(degree):
+    sin = math.sin(math.radians(degree))
+    cos = math.cos(math.radians(degree))
+    print(f"The sin value of the angle is {sin:.2f}")
+    print(f"The cos value of the angle is {cos:.2f}")
     
+def circleArea(diameter):
+    if diameter < 0:
+        raise ValueError("The diameter of a circle can't be negative")
+    else:
+        area = math.pi * (diameter * 0.5) ** 2
+        print(f"The area of the circle is {area:.2f}")
+        
+def union_symmetricDiff():
+    set1 = {10,20,30,40}
+    set2 = {10,15,20,25}
+    
+    print(f"Here are 2 sets: {set1} and {set2}")
+    union = set1.union(set2)
+    print(f"The union of the 2 sets is {union}")
+    symmetricDiff = set1.symmetric_difference(set2)
+    print(f"The symmetric difference of the 2 sets is {symmetricDiff}")
+
 if __name__ == "__main__":
-    main()
+    # main()
+    
+    # degree = float(input("Enter an angle in degrees: "))
+    # sin_cos(degree)
+    
+    # diameter = float(input("Enter a diameter of a circle: "))
+    # circleArea(diameter)
+    
+    # union_symmetricDiff()
