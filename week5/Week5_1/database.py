@@ -14,18 +14,12 @@ def create_table():
             email TEXT NOT NULL UNIQUE
         )
     ''')
-    conn.commit()
-    conn.close()
-    
-def create_course_table():
-    conn = create_connection()
-    cursor = conn.cursor()
     cursor.execute('''
-        CREATE TABLE IF NOT EXISTS tables (
+        CREATE TABLE IF NOT EXISTS courses (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT NOT NULL,
-            courseID TEXT NOT NULL UNIQUE,
-            unit INTEGER NOT NULL
+            course_id TEXT NOT NULL UNIQUE,
+            units INTEGER NOT NULL
         )
     ''')
     conn.commit()

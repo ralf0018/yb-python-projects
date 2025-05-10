@@ -1,5 +1,5 @@
 from database import create_table
-from user_manager import add_user, view_users, search_user, delete_user, advanced_search
+from user_manager import *
 
 def menu():
     print("\n==== User Manager ====")
@@ -41,11 +41,25 @@ def main():
             break
         elif choice == '6':
             name = input("Enter name to search: ")
-            user_id = int(input("Enter user ID to delete: "))
+            user_id = int(input("Enter user ID: "))
             users = advanced_search(user_id, name)
             for user in users:
                 print(user)
-        elif choice == 'y'
+        elif choice == '7':
+            name = input("Enter course name: ")
+            course_id = input("Enter course ID: ")
+            units = int(input("Enter course unit: "))
+            add_course(name, course_id, units)
+        elif choice == '8':
+            courses = view_courses()
+            for course in courses:
+                print(course)
+        elif choice == '9':
+            name, course_id = input("Enter course name and id: ").split()
+            courses = search_courses(name, course_id)
+            for course in courses:
+                print(course)
+            
         else:
             print("Invalid choice, try again.")
 
