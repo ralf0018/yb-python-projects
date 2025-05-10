@@ -9,10 +9,11 @@ def menu():
     print("4. Delete User by ID")
     print("5. Exit")
     print("6. Advanced Search")
-    print("\n==== Course Manager ====")
+    print("==== Course Manager ====")
     print("7. Add Course")
-    print("8. View All Courses")
-    print("9. Search Course by Name and Course ID")
+    print("8. Assign a User to a Course")
+    print("9. Search User Name and Course ID")
+    print("0. View all courses")
     
 
 def main():
@@ -51,15 +52,18 @@ def main():
             units = int(input("Enter course unit: "))
             add_course(name, course_id, units)
         elif choice == '8':
+            user_id = int(input("Enter user id: "))
+            course_id = input("Enter course id")
+            insert_userToCourse()
+        elif choice == '9':
+            name_id = input("Enter course name or user id: ")
+            courses = search_data(name_id)
+            for course in courses:
+                print(course)
+        elif choice == '0':
             courses = view_courses()
             for course in courses:
                 print(course)
-        elif choice == '9':
-            name, course_id = input("Enter course name and id: ").split()
-            courses = search_courses(name, course_id)
-            for course in courses:
-                print(course)
-            
         else:
             print("Invalid choice, try again.")
 

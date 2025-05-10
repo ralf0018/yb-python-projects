@@ -22,5 +22,14 @@ def create_table():
             units INTEGER NOT NULL
         )
     ''')
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS user_course (
+            user_id INTEGER NOT NULL,
+            course_id TEXT NOT NULL,
+            FOREIGN KEY (user_id) REFERENCES users(id),
+            FOREIGN KEY (course_id) REFERENCES courses(course_id),
+            PRIMARY KEY (user_id, course_id)
+        )
+    ''')
     conn.commit()
     conn.close()

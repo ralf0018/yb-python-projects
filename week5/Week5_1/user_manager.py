@@ -56,19 +56,28 @@ def add_course(name, course_id, units):
         print(" Course ID must be unique.")
     conn.close()
 
+def insert_userToCourse(user_id, course_id):
+    conn = create_connection()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("INSERT INTO user_course (user_id, course_id) VALUES (?, ?)", (user_id, course_id))
+        conn.commit()
+    except sqlite3.IntegrityError:
+        print()
+    conn.close()
+
+def search_data(name, course_id):
+    conn = create_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM courses WHERE name LIKE ? OR course_id LIKE ?", ('%' + name + '%', '%' + course_id + '%'))
+    rows = cursor.fetchall()
+    conn.close()
+    return rows
+    
 def view_courses():
     conn = create_connection()
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM courses")
-    courses = cursor.fetchall()
+    rows = cursor.fetchall()
     conn.close()
-    return courses
-
-def search_courses(name, course_id):
-    conn = create_connection()
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM courses WHERE name LIKE ? OR course_id LIKE ?", ('%' + name + '%', '%' + course_id + '%'))
-    courses = cursor.fetchall()
-    conn.close()
-    return courses
-    
+    return rows
