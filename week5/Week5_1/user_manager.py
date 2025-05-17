@@ -56,20 +56,25 @@ def add_course(name, course_id, units):
         print(" Course ID must be unique.")
     conn.close()
 
-def insert_userToCourse(user_id, course_id):
+def insert_userToCourse(user_name, course_id):
     conn = create_connection()
     cursor = conn.cursor()
-    try:
-        cursor.execute("INSERT INTO user_course (user_id, course_id) VALUES (?, ?)", (user_id, course_id))
-        conn.commit()
-    except sqlite3.IntegrityError:
-        print()
+    cursor.execute("SELECT COUNT(*) FROM users WHERE name = '?'", (user_name))
+    user_exists = cursor.fetchone()[0] > 0
+    if user_exists:
+        try:
+            cursor.execute("INSERT INTO user_course (user_name, course_id) VALUES (?, ?)", (user_name, course_id))
+            conn.commit()
+        except sqlite3.IntegrityError:
+            print()
+    else:
+        print(f"{user_name} doesn't exist, please check.")
     conn.close()
 
-def search_data(name, course_id):
+def search_data(keyword):
     conn = create_connection()
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM courses WHERE name LIKE ? OR course_id LIKE ?", ('%' + name + '%', '%' + course_id + '%'))
+    cursor.execute("SELECT * FROM user_course WHERE user_id LIKE ? OR course_id LIKE ?", ('%' + keyword + '%', '%' + keyword + '%'))
     rows = cursor.fetchall()
     conn.close()
     return rows
@@ -81,3 +86,5 @@ def view_courses():
     rows = cursor.fetchall()
     conn.close()
     return rows
+
+# insert_userToCourse('Ada',1)

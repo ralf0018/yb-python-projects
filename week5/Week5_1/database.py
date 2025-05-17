@@ -24,10 +24,8 @@ def create_table():
     ''')
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS user_course (
-            user_id INTEGER NOT NULL,
-            course_id TEXT NOT NULL,
-            FOREIGN KEY (user_id) REFERENCES users(id),
-            FOREIGN KEY (course_id) REFERENCES courses(course_id),
+            user_name TEXT NOT NULL,
+            course_id INTEGER NOT NULL,
             PRIMARY KEY (user_id, course_id)
         )
     ''')

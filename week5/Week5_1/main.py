@@ -52,9 +52,9 @@ def main():
             units = int(input("Enter course unit: "))
             add_course(name, course_id, units)
         elif choice == '8':
-            user_id = int(input("Enter user id: "))
-            course_id = input("Enter course id")
-            insert_userToCourse()
+            user_name = input("Enter user name: ")
+            course_id = int(input("Enter course id: "))
+            insert_userToCourse(user_name, course_id)
         elif choice == '9':
             name_id = input("Enter course name or user id: ")
             courses = search_data(name_id)
