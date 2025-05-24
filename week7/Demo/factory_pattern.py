@@ -18,6 +18,7 @@ class AnimalFactory(Factory):
 
         return animal
 
+
 class DogFactory(Factory):
     
     def create_product(self, kind=None):
