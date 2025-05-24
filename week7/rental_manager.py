@@ -29,7 +29,7 @@ manager2.show_available_cars()  # Affects both because it's the same instance
 print("Are both managers the same object?", manager1 is manager2)
 
 
-car_name = input("Enter the car name to check its address: ")
-# car_name = "Toyota"  # Example input
+# car_name = input("Enter the car name to check its address: ")
+car_name = "Toyota"  # Example input
 print(f"manager1 car name address: {id(manager1.show_address)}")
 print(f"manager2 car name address: {id(manager2.show_address)}")

@@ -18,7 +18,6 @@ class AnimalFactory(Factory):
 
         return animal
 
-
 class DogFactory(Factory):
     
     def create_product(self, kind=None):
@@ -40,16 +39,12 @@ class Dog(Animals):
     def run(self):
         print(f"I'm a Dog, I can run!!")
 
-
 class Cat(Animals):
     def __init__(self):
         pass
 
     def run(self):
         print(f"I'm a Cat, I can run!!")
-
-
-
 
 
 # client
