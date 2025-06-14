@@ -67,7 +67,7 @@ def make_human_move(board, current_player):
 def make_computer_move(board, current_player):
     """Make a move for the computer player."""
     candidates = empty_squares(board)
-    choice = random_in_range(0, len(candidates))
+    choice = random.randint(0, len(candidates)-1)
     row, col = candidates[choice]
     board[row][col] = current_player
 
@@ -75,9 +75,6 @@ def empty_squares(board):
     """Return a list of empty squares on the board."""
     return [(i, j) for i in range(3) for j in range(3) if board[i][j] == ' ']
 
-def random_in_range(start, end):
-    """Return a random integer in the range [start, end)."""
-    return random.randint(start, end - 1)
 
 def play_game(board, human_player):
     """Play a Tic-tac-toe game."""
