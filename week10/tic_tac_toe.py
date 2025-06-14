@@ -86,6 +86,7 @@ def play_game(board, human_player):
         display(board)
         play_one_turn(board, current_player, human_player)
         
+        # Check if this move created a win
         if game_over(board):
             display(board)
             if current_player == human_player:
@@ -93,6 +94,7 @@ def play_game(board, human_player):
             else:
                 return "lose"
         
+        # If no win, check for draw
         if is_board_full(board):
             display(board)
             return "draw"
