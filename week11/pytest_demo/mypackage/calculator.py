@@ -24,8 +24,8 @@ class Calculator:
 
     @staticmethod
     def root(a, b):
-        if a < 0 and b % 2 == 0:
-            raise ValueError("Cannot take even root of a negative number")
+        if b == 0:
+            raise ValueError("Cannot take zero root of a number")
         return a ** (1 / b)
 
     @staticmethod
@@ -46,6 +46,4 @@ class Calculator:
 if __name__ == "__main__":
     # Example usage
     calc = Calculator()
-    print("Sine:", calc.sine(30))
-    print("Cosine:", calc.cosine(60))
-    print("Tangent:", calc.tangent(45))
+    print(calc.root(-2,0))
