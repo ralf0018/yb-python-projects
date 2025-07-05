@@ -27,13 +27,7 @@ def instructor_chatbot():
     Then, give a structured itinerary with a name of the place, address and short description for each day separately in order with maximum three activities in a day.
     """
     
-    try:
-        # Configure the model
-        # model = genai.GenerativeModel('gemini-2.5-flash')
-        
-        # Generate content
-        # response = model.generate_content(prompt)
-        
+    try:        
         response = client.models.generate_content(
             model = 'gemini-2.5-flash',
             contents = prompt,
